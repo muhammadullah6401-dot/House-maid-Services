@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #8A1538, #FFD700);
+    color: #fff;
+    margin:0; padding:0;
+}
+.container { width: 95%; max-width: 1200px; margin: 20px auto; }
+h1 { text-align:center; margin-bottom: 20px; text-shadow:2px 2px #000; }
+
+/* Stats cards */
+.stats { display:flex; flex-wrap:wrap; justify-content:space-around; margin-bottom:20px; }
+.card {
+    background: rgba(0,0,0,0.3);
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    width:23%;
+    margin:10px 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+.card:hover { transform: scale(1.05); }
+
+/* Table container for scroll */
+.table-container { overflow-x:auto; }
+
+/* Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease;
+}
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #fff;
+    text-align: center;
+    background: rgba(0,0,0,0.3);
+}
+.table th {
+    background: rgba(0,0,0,0.5);
+    font-size: 16px;
+}
+.table tr:hover { background: rgba(255,215,0,0.3); transform: scale(1.01); transition: 0.3s; }
+
+/* Buttons */
+.button {
+    padding: 5px 12px;
+    background: #8A1538;
+    color: #FFD700;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+    text-decoration:none;
+    display:inline-block;
+}
+.button:hover { background: #FFD700; color: #8A1538; transform: scale(1.05); }
+
+/* Responsive */
+@media(max-width:1024px) {
+    .stats { flex-direction: row; flex-wrap: wrap; justify-content:space-around; }
+    .card { width:45%; }
+}
+
+@media(max-width:768px) {
+    .stats { flex-direction: column; align-items:center; }
+    .card { width:80%; }
+    table, form { font-size:14px; }
+}
+
+@media(max-width:480px) {
+    input, select, .button { width:100%; box-sizing:border-box; }
+    .table th, .table td { padding:5px; font-size:12px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Admin Dashboard</h1>
+
+<div class="stats">
+    <div class="card">Total Bookings<br>{{ total_bookings }}</div>
+    <div class="card">Today Bookings<br>{{ today_bookings }}</div>
+    <div class="card">Pending<br>{{ pending }}</div>
+    <div class="card">Accepted<br>{{ accepted }}</div>
+</div>
+
+<h2>Bookings</h2>
+<div class="table-container">
+<table class="table">
+<tr><th>ID</th><th>Name</th><th>Phone</th><th>Service</th><th>Date</th><th>Time</th><th>Status</th><th>Actions</th></tr>
+{% for b in bookings %}
+<tr>
+<td>{{ b.id }}</td>
+<td>{{ b.name }}</td>
+<td>{{ b.phone }}</td>
+<td>{{ b.service }}</td>
+<td>{{ b.date }}</td>
+<td>{{ b.time }}</td>
+<td>{{ b.status }}</td>
+<td>
+{% if b.status=="Pending" %}
+<a href="{{ url_for('accept_booking', id=b.id) }}" class="button">Accept</a>
+{% endif %}
+<a href="{{ url_for('delete_booking', id=b.id) }}" class="button">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+{% if session['role']=="main" %}
+<h2>Admins Management</h2>
+<form method="POST" action="{{ url_for('add_admin') }}">
+<input type="text" name="username" placeholder="Username" required>
+<input type="password" name="password" placeholder="Password" required>
+<select name="role">
+<option value="admin">Admin</option>
+<option value="main">Main Admin</option>
+</select>
+<button type="submit" class="button">Add Admin</button>
+</form>
+
+<div class="table-container">
+<table class="table">
+<tr><th>ID</th><th>Username</th><th>Role</th><th>Action</th></tr>
+{% for a in admins %}
+<tr>
+<td>{{ a.id }}</td>
+<td>{{ a.username }}</td>
+<td>{{ a.role }}</td>
+<td>
+{% if a.role != "main" %}
+<a href="{{ url_for('delete_admin', id=a.id) }}" class="button">Delete</a>
+{% endif %}
+</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+<h2>Change Main Admin Credentials</h2>
+<form method="POST" action="{{ url_for('change_main_admin') }}">
+<input type="text" name="username" placeholder="New Username" required>
+<input type="password" name="password" placeholder="New Password" required>
+<button type="submit" class="button">Update</button>
+</form>
+{% endif %}
+
+<a href="{{ url_for('logout') }}" class="button">Logout</a>
+
+</div>
+</body>
+</html>

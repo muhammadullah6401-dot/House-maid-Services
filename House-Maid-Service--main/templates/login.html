@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        :root {
+            --maroon: #8A1538;
+            --maroon-dark: #6d1129;
+            --gold: #d4af37;
+            --light: #f9fafb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--maroon-dark), var(--maroon));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: gradientBG 10s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .login-container {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-container::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, var(--maroon), var(--gold), var(--maroon-dark));
+            animation: rotateBG 6s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes rotateBG {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .login-container * {
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            color: var(--maroon);
+            margin-bottom: 30px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 12px;
+            border: 2px solid var(--maroon);
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 10px var(--gold);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 12px;
+            background: var(--maroon);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: var(--maroon-dark);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Admin Login</h2>
+    <form method="POST" action="/admin">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+</body>
+</html>

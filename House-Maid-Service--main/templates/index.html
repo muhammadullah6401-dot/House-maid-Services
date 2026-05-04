@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Home Mad Services in Qatar - Home mad Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --maroon: #8A1538;
+            --maroon-dark: #6d1129;
+            --maroon-light: #a51d47;
+            --gold: #d4af37;
+            --whatsapp: #25D366;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+                * Navbar Base Styles */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-white);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        /* Container with Safe Spacing */
+        .navbar-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem; /* Desktop side spacing */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        /* Logo Section */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f3f4f6;
+            box-shadow: 0 4px 12px rgba(138, 21, 56, 0.15);
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text h1 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--maroon);
+            line-height: 1.1;
+        }
+
+        .logo-text p {
+            margin: 2px 0 0 0;
+            font-size: 0.7rem;
+            color: var(--text-light);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Desktop Menu */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-menu a:hover {
+            color: var(--maroon);
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            display: flex;
+            gap: 4px;
+            border-left: 1px solid #e5e7eb;
+            padding-left: 1.5rem;
+        }
+
+        .language-toggle button {
+            padding: 5px 10px;
+            border: 1px solid #e5e7eb;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .language-toggle button.active {
+            background: var(--maroon);
+            color: white;
+            border-color: var(--maroon);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none; /* Hidden on desktop */
+            background: none;
+            border: none;
+            color: var(--maroon);
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* Mobile Menu Panel */
+        .mobile-menu {
+            display: none; /* Triggered by JS */
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            flex-direction: column;
+            padding: 1rem 2rem; /* Yahan padding barha di hai */
+            box-shadow: 0 15px 20px rgba(0,0,0,0.1);
+            border-top: 1px solid #f3f4f6;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            padding: 15px 0; /* Links ke darmiyan gap */
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #f9fafb;
+        }
+
+        .mobile-menu a:last-of-type {
+            border-bottom: none;
+        }
+
+        /* ==========================================
+        RESPONSIVE QUERIES (The Fixes)
+        ========================================== */
+
+        @media (max-width: 768px) {
+            .navbar-container {
+                height: 70px;
+                padding: 0 1.2rem; /* Mobile side spacing narrowed */
+            }
+
+            .nav-menu {
+                display: none; /* Hide desktop links */
+            }
+
+            .mobile-menu-btn {
+                display: block; /* Show hamburger */
+            }
+
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+            }
+
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+        }
+
+        /* Chote Mobile Phones ke liye mazeed spacing */
+        @media (max-width: 480px) {
+            .navbar-container {
+                padding: 0 1rem;
+            }
+            
+            .mobile-menu {
+                padding: 1rem 1.5rem; /* Tora sa side gap taake edge se door rahein */
+            }
+        }
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-content h1 span {
+            display: block;
+            color: var(--gold);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            color: #e5e7eb;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--maroon);
+            color: white;
+            box-shadow: 0 10px 25px rgba(138, 21, 56, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--maroon-dark);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(138, 21, 56, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--maroon);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator-box {
+            width: 24px;
+            height: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            padding-top: 8px;
+        }
+
+        .scroll-indicator-dot {
+            width: 6px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 3px;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 1.5rem;
+        }
+
+        .section-bg-gray {
+            background: #f9fafb;
+        }
+
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) rotateY(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card-image {
+            position: relative;
+            height: 192px;
+            overflow: hidden;
+        }
+
+        .service-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+        }
+
+        .service-card-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--maroon);
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .service-card-content {
+            padding: 1.5rem;
+        }
+
+        .service-card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(138, 21, 56, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .service-card-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--maroon);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-card .btn {
+            width: 100%;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f9fafb, white);
+            border: 1px solid #f3f4f6;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 20px rgba(138, 21, 56, 0.3);
+            transition: transform 0.6s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: rotateY(360deg);
+        }
+
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* Booking Form */
+        .booking-form-container {
+            max-width: 56rem;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            padding: 3rem;
+            animation: fadeInUp 0.6s ease 0.2s both;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--maroon);
+            box-shadow: 0 0 0 3px rgba(138, 21, 56, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #f9fafb, white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f3f4f6;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-info {
+            margin-left: 1rem;
+        }
+
+        .testimonial-info h4 {
+            font-weight: bold;
+            color: #111827;
+        }
+
+        .testimonial-info p {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-stars svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--gold);
+            color: var(--gold);
+        }
+
+        .testimonial-text {
+            color: #374151;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #111827, var(--maroon), #111827);
+            color: white;
+            padding: 4rem 1.5rem;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--maroon);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: #d1d5db;
+        }
+
+        .footer-contact-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--gold);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .footer-social svg {
+            width: 20px;
+            height: 20px;
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: #d1d5db;
+        }
+
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .floating-btn {
+            position: relative;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: slideInRight 0.6s ease both;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .floating-btn svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+
+        .floating-btn-whatsapp {
+            background: var(--whatsapp);
+            animation-delay: 1s;
+        }
+
+        .floating-btn-whatsapp:hover {
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        .floating-btn-call {
+            background: var(--maroon);
+            animation-delay: 1.2s;
+        }
+
+        .floating-btn-call:hover {
+            box-shadow: 0 10px 40px rgba(138, 21, 56, 0.5);
+        }
+
+        .floating-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-btn-whatsapp::before {
+            background: var(--whatsapp);
+        }
+
+        .floating-btn-call::before {
+            background: var(--maroon);
+            animation-delay: 0.5s;
+        }
+
+        .floating-btn-tooltip {
+            position: absolute;
+            right: 100%;
+            margin-right: 0.75rem;
+            background: #111827;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            white-space: nowrap;
+            font-size: 0.875rem;
+            font-weight: 500;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .floating-btn:hover .floating-btn-tooltip {
+            opacity: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px) rotate(-180deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotate(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .logo-text {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.125rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-form-container {
+                padding: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .floating-buttons {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .floating-btn {
+                width: 56px;
+                height: 56px;
+            }
+
+            .floating-btn svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        /* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* MAIN SECTION */
+.qatar-poster {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 50px;
+
+    background-image: url('static/uploads/bai.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 20px;   /* 👈 yeh image ko gol karega */
+    overflow: hidden;      /* 👈 important (round shape lock) */
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* LEFT CARD */
+.poster-card {
+    width: 40%;
+    min-width: 300px;
+
+    background: linear-gradient(135deg, #8A1538, #4b0026);
+    color: #ffffff;
+
+    padding: 25px;
+    border-radius: 15px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    border-left: 4px solid #FFD700; /* 🔥 PRO LINE */
+
+    position: relative;
+    overflow: hidden;
+
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* HEADER */
+.poster-header h2 {
+    font-size: 24px;
+    color: #FFD700;
+}
+
+.poster-header span {
+    font-size: 13px;
+    color: #eee;
+}
+
+/* CONTENT */
+.poster-content h3 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.poster-desc {
+    font-size: 14px;
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #f1f1f1;
+}
+
+/* LIST */
+.poster-content ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.poster-content ul li {
+    font-size: 15px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+/* HOVER LIST */
+.poster-content ul li:hover {
+    color: #FFD700;
+    transform: translateX(5px);
+}
+
+/* PRO BADGE */
+.pro-badge {
+    margin-top: 15px;
+    font-size: 13px;
+    background: rgba(255,215,0,0.15);
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* RIGHT TEXT */
+.right-text {
+    width: 55%;
+    max-width: 500px;
+
+    /* 🔥 strong readable color */
+    color: #1a1a1a;
+}
+
+/* HEADING */
+.right-text h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+
+    /* 🔥 dark maroon (clear) */
+    color: #5a0d2f;
+}
+
+/* PARAGRAPH */
+.right-text p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+
+    /* 🔥 better readability */
+    color: #333;
+}
+
+/* STRONG TEXT */
+.right-text strong {
+    color: #8A1538; /* highlight */
+}
+
+/* 🔥 EXTRA: background behind text (IMPORTANT FIX) */
+.right-text {
+    background: rgba(255,255,255,0.85); /* light glass */
+    padding: 20px;
+    border-radius: 12px;
+}
+/* ANIMATION */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HOVER CARD */
+.poster-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255,215,0,0.5);
+}
+
+/* LIGHT EFFECT */
+.poster-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,215,0,0.1), transparent);
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .qatar-poster {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .poster-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .right-text {
+        width: 100%;
+    }
+
+    .right-text h2 {
+        font-size: 24px;
+    }
+}
+
+    /* Card Container Styling */
+    .poster-container {
+        width: 100%;           /* Mobile par side se thodi jagah chorde ga */
+        max-width: 500px;     /* Desktop par isse zyada bada nahi hoga */
+        margin: 20px auto;    /* Center align karne ke liye */
+        border-radius: 30px;  /* Corners round karne ke liye */
+        overflow: hidden;     /* Image corners se bahar na nikle */
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Thoda premium look dene ke liye shadow */
+        background-color: #f9f9f9;
+    }
+
+    /* Responsive Image Styling */
+    .responsive-img {
+        width: 100%;          /* Mobile screen par pura fit ho jaye ga */
+        height: auto;         /* Aspect ratio kharab nahi hoga */
+        display: block;       /* Extra bottom space khatam karne ke liye */
+        object-fit: contain;
+         border-radius: 30px;
+    }
+
+    /* Agar mobile screen 480px se choti ho */
+    @media (max-width: 480px) {
+        .poster-container {
+            width: 100%;      /* Mobile par full width */
+            margin: 10px 0;
+            border-radius: 30px; /* Mobile par full screen feel ke liye */
+        }
+    }
+
+
+    </style>
+</head>
+<body>
+ <!-- Navbar -->
+<nav class="navbar" id="navbar">
+    <div class="navbar-container">
+        <div class="logo" onclick="scrollToSection('hero')">
+            <div class="logo-icon">
+                <img src="{{ url_for('static', filename='uploads/logo.jpeg') }}" alt="Logo">
+            </div>
+            <div class="logo-text">
+                <h1>House Maid Service</h1>
+                <p>Premium Services Qatar</p>
+            </div>
+        </div>
+
+        <div class="nav-menu">
+            <a onclick="scrollToSection('hero')" data-en="Home" data-ar="الرئيسية">Home</a>
+            <a onclick="scrollToSection('services')" data-en="Services" data-ar="الخدمات">Services</a>
+            <a onclick="scrollToSection('about')" data-en="About" data-ar="من نحن">About</a>
+            <a onclick="scrollToSection('contact')" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+
+            <div class="language-toggle">
+                <button class="active" onclick="setLanguage('EN')">EN</button>
+                <button onclick="setLanguage('AR')">AR</button>
+            </div>
+        </div>
+
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a onclick="scrollToSection('hero')">Home</a>
+        <a onclick="scrollToSection('services')">Services</a>
+        <a onclick="scrollToSection('about')">About</a>
+        <a onclick="scrollToSection('contact')">Contact</a>
+        <div class="language-toggle" style="margin-top: 1rem; border:none; padding:0;">
+            <button class="active" onclick="setLanguage('EN')">EN</button>
+            <button onclick="setLanguage('AR')">AR</button>
+        </div>
+    </div>
+</nav>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1728488444676-9f4035cb8d81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBtb2Rlcm4lMjBob21lJTIwaW50ZXJpb3IlMjBRYXRhcnxlbnwxfHx8fDE3NzUzMDk4MDN8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Luxury home interior">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <h1 
+              data-en="Premium House <span>Services in Qatar</span>" 
+             data-ar="خدمات منزلية <span>في قطر</span>">
+             Premium House <span>Services in Qatar</span>
+            </h1>
+            <p data-en="Trusted Female Professionals at Your Doorstep"
+                   data-ar="محترفات موثوقات في خدمتك">
+                    Trusted Female Professionals at Your Doorstep
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('booking')"><data-en="Book Now" data-ar="احجز الآن">Book Now</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('services')">Explore Services</button>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-indicator-box">
+                <div class="scroll-indicator-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section-bg-gray">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 data-en="Our Premium Services" data-ar="خدماتنا المتميزة">
+                    Our Premium Services
+                </h2>
+                
+                
+                <p>Professional female staff ready to serve you with excellence</p>
+            </div>
+
+            <div class="services-grid">
+              
+            <!-- Maid Service -->
+                <div class="service-card" style="animation-delay: 0.3s;">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1713552566168-89c00fd622cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYWlkJTIwc2VydmljZXxlbnwxfHx8fDE3NzUzMTY3MTN8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Maid Service">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-badge"> Experienced</div>
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        
+                        <h3><div align="right">خدمة الخادمة</div>Maid Service</h3>
+                        <p>Full-time or part-time professional maids for complete household management</p>
+                        <button class="btn btn-primary" onclick="scrollToSection('booking')">Book Now</button>
+                    </div>
+                </div>
+                <!-- Cooking Service -->
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1709396759790-9051f0c1801a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBmZW1hbGUlMjBjaGVmJTIwY29va2luZ3xlbnwxfHx8fDE3NzUzMDk4MDN8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Cooking Service">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-badge">Experienced</div>
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2"/>
+                                <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"/>
+                                <path d="M6 12h12"/>
+                            </svg>
+                        </div>
+                        <h3><div align="right">خدمة الطبخ</div>Cooking Service</h3>
+                        <p>Professional home chefs to prepare delicious, healthy meals for your family</p>
+                        <button class="btn btn-primary" onclick="scrollToSection('booking')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Babysitting Service -->
+                <div class="service-card" style="animation-delay: 0.1s;">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1763493323825-1839b7d96b27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWJ5c2l0dGVyJTIwY2hpbGQlMjBjYXJlfGVufDF8fHx8MTc3NTMwOTgwM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Babysitting Service">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-badge"> Experienced</div>
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 12h.01"/>
+                                <path d="M15 12h.01"/>
+                                <path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/>
+                                <path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/>
+                            </svg>
+                        </div>
+                        <h3><div align="right">رعاية الأطفال</div>Babysitting Service</h3>
+                        <p>Caring and trained babysitters to look after your children with love and attention</p>
+                        <button class="btn btn-primary" onclick="scrollToSection('booking')">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Cleaning Service -->
+                <div class="service-card" style="animation-delay: 0.2s;">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1581578949510-fa7315c4c350?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3VzZSUyMGNsZWFuaW5nJTIwc2VydmljZXxlbnwxfHx8fDE3NzUzMTY3MTN8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Cleaning Service">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-badge">Experienced</div>
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                                <path d="M5 3v4"/>
+                                <path d="M19 17v4"/>
+                                <path d="M3 5h4"/>
+                                <path d="M17 19h4"/>
+                            </svg>
+                        </div>
+                        <h3 ><div align="right" color="#b8941">خدمة التنظيف</div>Cleaning Service</h3>
+                        <p>Expert cleaners for spotless homes with eco-friendly products and techniques</p>
+                        <button class="btn btn-primary" onclick="scrollToSection('booking')">Book Now</button>
+                    </div>
+                </div>
+                  
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="about" class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Why Choose Us</h2>
+                <p>Excellence and trust in every service we provide</p>
+            </div>
+
+            <section class="qatar-poster">
+
+         <div class="poster-container">
+                    <img src="{{ url_for('static', filename='uploads/image.jpeg') }}" 
+                     alt="House Maid Services Qatar"
+                      class="responsive-img">
+          </div>
+
+    <!-- RIGHT: DESCRIPTION -->
+    <div class="right-text">
+        <h2>Reliable & Trusted Home Services in Qatar</h2>
+
+        <p>
+            We provide professional house services including cleaning, babysitting, cooking, and housekeeping. 
+            Our trained staff ensures reliability, safety, and high-quality service for every customer.
+        </p>
+
+        <p>
+            Whether you need daily support or part-time help, our experienced team is always ready to assist you.
+        </p>
+
+        <p><strong>✔ 24/7 Available | ✔ Trusted Staff | ✔ Affordable Prices</strong></p>
+    </div>
+
+</section>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Verified Female Staff</h3>
+                    <p>All our professionals are thoroughly background-checked and verified</p>
+                </div>
+
+                <div class="feature-card" style="animation-delay: 0.1s;">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="7"/>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                        </svg>
+                    </div>
+                    <h3>Experienced Professionals</h3>
+                    <p>Highly trained staff with years of experience in their field</p>
+                </div>
+
+                <div class="feature-card" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3>Affordable Packages</h3>
+                    <p>Competitive pricing with flexible packages to suit your budget</p>
+                </div>
+
+                <div class="feature-card" style="animation-delay: 0.3s;">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/>
+                        </svg>
+                    </div>
+                    <h3>24/7 Customer Support</h3>
+                    <p>Round-the-clock support to assist you whenever you need help</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="section section-bg-gray">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Book Your Service</h2>
+                <p>Fill out the form and we'll get back to you shortly</p>
+            </div>
+
+            <div class="booking-form-container">
+                <!-- <form id="bookingForm" onsubmit="handleSubmit(event)"> -->
+                <form action="/book" method="POST">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <!-- <input type="text" placeholder="Enter your name" required> -->
+                       <input type="text" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <!-- <input type="tel" placeholder="+974 XXXX XX" required> -->
+                         <input type="tel" name="phone" placeholder="+974 XXXX XXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Service</label>
+                        <!-- <select required> -->
+                       <select name="service" required>
+                            <option value="">Choose a service</option>
+                            <option value="cooking">Cooking Service</option>
+                            <option value="babysitting">Babysitting Service</option>
+                            <option value="cleaning">Cleaning Service</option>
+                            <option value="maid">Maid Service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Preferred Date</label>
+                            <!-- <input type="date" required> -->
+                             <input type="date" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Preferred Time</label>
+                            <!-- <input type="time" required> -->
+                             <input type="time" name="time" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.125rem; padding: 1rem 2rem;">
+                        Submit Booking Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Trusted by families across Qatar</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1770130174214-477ce018479f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaWRkbGUlMjBlYXN0ZXJuJTIwd29tYW4lMjBzbWlsaW5nfGVufDF8fHx8MTc3NTMxNjcxN3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Fatima Al-Thani">
+                        <div class="testimonial-info">
+                            <h4>Fatima Al-Thani</h4>
+                            <p>Homeowner, Doha</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <p class="testimonial-text">"Exceptional service! The chef they provided is amazing. My family loves the food and the professionalism is top-notch."</p>
+                </div>
+
+                <div class="testimonial-card" style="animation-delay: 0.1s;">
+                    <div class="testimonial-header">
+                        <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1632144130358-6cfeed023e27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGN1c3RvbWVyJTIwdGVzdGltb25pYWx8ZW58MXx8fHwxNzc1MjMyMzA5fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Maryam Hassan">
+                        <div class="testimonial-info">
+                            <h4>Maryam Hassan</h4>
+                            <p>Working Mother, West Bay</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <p class="testimonial-text">"The babysitter is wonderful with my children. I can focus on work knowing they are in safe and caring hands."</p>
+                </div>
+
+                <div class="testimonial-card" style="animation-delay: 0.2s;">
+                    <div class="testimonial-header">
+                        <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1753161022619-d535b3abe1f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXRpc2ZpZWQlMjBjdXN0b21lciUyMHJldmlld3xlbnwxfHx8fDE3NzUzMTY3MTR8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Sarah Abdullah">
+                        <div class="testimonial-info">
+                            <h4>Sarah Abdullah</h4>
+                            <p>Resident, The Pearl</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <p class="testimonial-text">"Best cleaning service in Qatar! My home has never looked better. Highly recommend their services."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+            
+            <footer id="contact" class="footer">
+                <div class="footer-container">
+                    <div class="footer-grid">
+                        <!-- Company Info -->
+                        <div class="footer-section">
+                            <div class="footer-logo">
+                                <div class="footer-logo-icon" style="width: 60px; height: 60px; overflow: hidden; border-radius: 8px;">
+                                    <img src="{{url_for('static', filename='uploads/logo.jpeg')}}" 
+                                        alt="House Maid Service Logo" 
+                                        style="width: 100%; height: 100%; object-fit: contain; display: block;">
+                                </div>
+                                <div>
+                                    <h3>House Maid services Qatar</h3>
+                                    <p style="font-size: 0.875rem; color: #d1d5db;">Premium House Services</p>
+                                </div>
+                            </div>
+                            <p style="color: #d1d5db; line-height: 1.6;">Your trusted partner for professional female home service providers in Qatar.</p>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="footer-section">
+                            <h4>Contact Us</h4>
+                            <div class="footer-contact-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <span>+974 70454465</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                                <span>alamalamss12345@gmail.com</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span>Doha, Qatar</span>
+                    </div>
+                </div>
+                        <!-- Social Media -->
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 House Maid services Qatar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <!-- WhatsApp Button -->
+        <button class="floating-btn floating-btn-whatsapp" onclick="openWhatsApp()" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+            <span class="floating-btn-tooltip">Chat on WhatsApp</span>
+        </button>
+
+        <!-- Call Button -->
+        <button class="floating-btn floating-btn-call" onclick="makeCall()" aria-label="Call">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span class="floating-btn-tooltip">Call Now</span>
+        </button>
+    </div>
+            <script>
+
+// ================= LANGUAGE SWITCH =================
+function setLanguage(lang) {
+
+    // Active button highlight
+    document.querySelectorAll('.language-toggle button').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.innerText === lang) {
+            btn.classList.add('active');
+        }
+    });
+
+    // Text change
+    document.querySelectorAll('[data-en]').forEach(el => {
+        if (lang === 'AR') {
+            el.innerHTML = el.getAttribute('data-ar');
+            document.body.style.direction = 'rtl';
+        } else {
+            el.innerHTML = el.getAttribute('data-en');
+            document.body.style.direction = 'ltr';
+        }
+    });
+}
+
+
+// ================= NAVBAR SCROLL =================
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+
+// ================= MOBILE MENU =================
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    mobileMenu.classList.toggle('active');
+
+    if (mobileMenu.classList.contains('active')) {
+        menuIcon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
+    } else {
+        menuIcon.innerHTML = '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
+    }
+}
+
+
+// ================= SMOOTH SCROLL =================
+function scrollToSection(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        const offset = 80;
+        const position = element.getBoundingClientRect().top + window.pageYOffset - offset;
+
+        window.scrollTo({
+            top: position,
+            behavior: 'smooth'
+        });
+
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenu.classList.contains('active')) {
+            toggleMobileMenu();
+        }
+    }
+}
+
+
+// ================= WHATSAPP =================
+function openWhatsApp() {
+    window.open('https://wa.me/97470454465', '_blank');
+}
+
+
+// ================= CALL =================
+function makeCall() {
+    window.location.href = 'tel:+97470454465';
+}
+
+
+// ================= FORM =================
+function handleSubmit(event) {
+    event.preventDefault();
+    alert('Thank you! We will contact you soon.');
+    event.target.reset();
+}
+
+
+// ================= ANIMATION =================
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.service-card, .feature-card, .testimonial-card, .section-header');
+    elements.forEach(el => observer.observe(el));
+});
+
+</script>
+</body>
+</html>
